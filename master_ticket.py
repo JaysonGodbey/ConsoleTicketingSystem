@@ -3,9 +3,7 @@ TICKET_PRICE = 10
 
 tickets_remaining = 100
 
-# Create calc function takes number of tickets and retruns total
 def calculate_price(number_of_tickets):
-    
     return (number_of_tickets * TICKET_PRICE) + SURCHARGE
 
 while tickets_remaining >= 1:
@@ -19,11 +17,9 @@ while tickets_remaining >= 1:
     except ValueError as err:
         print("Oh no, we ran into an issue. {} Please try again.".format(err))
     else:
-        amount_due = calculate_price(number_of_tickets)
-    
+        amount_due = calculate_price(number_of_tickets)  
         print("Your total is ${}.".format(amount_due))
         proceed = input("Would you like to proceed with the purchase Y/N?  ")
-        
         if proceed.lower() == "y":
             print("SOLD!")
             tickets_remaining -= number_of_tickets
